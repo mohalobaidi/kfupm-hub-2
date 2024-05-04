@@ -5,7 +5,7 @@ export default defineNuxtConfig({
     groqApiURL: process.env.GROQ_API_URL
   },
   devtools: { enabled: true },
-  modules: ["@nuxt/ui"],
+  modules: ["@nuxt/ui", "@nuxtjs/supabase"],
   nitro: {
     storage: {
       data: { driver: 'vercelKV' },

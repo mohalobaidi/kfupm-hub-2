@@ -16,18 +16,11 @@
     "vue-router": "^4.3.0"
   },
   "devDependencies": {
-    "@ai-sdk/openai": "^0.0.9",
-    "@langchain/core": "^0.1.61",
-    "@langchain/openai": "^0.0.28",
     "@nuxt/ui": "latest",
-    "ai": "^3.1.1",
+    "@nuxtjs/supabase": "latest",
+    "@types/common-tags": "^1.8.4",
     "common-tags": "^1.8.2",
-    "jose": "^5.2.4",
-    "langchain": "^0.1.36",
     "sass": "^1.76.0",
-    "vite-plugin-pug": "^0.3.2",
-    "zod": "^3.23.6",
-    "@langchain/groq": "^0.0.9",
-    "@types/common-tags": "^1.8.4"
+    "vite-plugin-pug": "^0.3.2"
   }
 }
