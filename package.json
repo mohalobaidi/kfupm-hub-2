@@ -3,15 +3,13 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "NITRO_PRESET=vercel-edge nuxt build",
+    "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@langchain/groq": "^0.0.9",
-    "@types/common-tags": "^1.8.4",
     "@vercel/kv": "^1.0.1",
     "nuxt": "^3.11.2",
     "vue": "^3.4.21",
@@ -28,6 +26,8 @@
     "langchain": "^0.1.36",
     "sass": "^1.76.0",
     "vite-plugin-pug": "^0.3.2",
-    "zod": "^3.23.6"
+    "zod": "^3.23.6",
+    "@langchain/groq": "^0.0.9",
+    "@types/common-tags": "^1.8.4"
   }
 }

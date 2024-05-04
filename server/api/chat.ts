@@ -26,17 +26,21 @@ export default defineLazyEventHandler(async () => {
   })
   
   return defineEventHandler(async (event: any) => {
-    const body = await readBody(event)
-    const messages = body.messages ?? []
-    const formattedPreviousMessages = messages.slice(0, -1).map(formatMessage)
-    const currentMessageContent = messages[messages.length - 1]?.content ?? '[MESSAGE LOST]'
-    const prompt = PromptTemplate.fromTemplate(TEMPLATE)
-    const outputParser = new HttpResponseOutputParser()
-    const chain = prompt.pipe(model).pipe(outputParser)
-    const stream = await chain.stream({
-      chat_history: formattedPreviousMessages.join('\n'),
-      input: currentMessageContent,
-    })
-    return new StreamingTextResponse(stream)
+    try {
+      const body = await readBody(event)
+      const messages = body.messages ?? []
+      const formattedPreviousMessages = messages.slice(0, -1).map(formatMessage)
+      const currentMessageContent = messages[messages.length - 1]?.content ?? '[MESSAGE LOST]'
+      const prompt = PromptTemplate.fromTemplate(TEMPLATE)
+      const outputParser = new HttpResponseOutputParser()
+      const chain = prompt.pipe(model).pipe(outputParser)
+      const stream = await chain.stream({
+        chat_history: formattedPreviousMessages.join('\n'),
+        input: currentMessageContent,
+      })
+      return new StreamingTextResponse(stream)
+    } catch {
+      return 'test'
+    }
   })
 })

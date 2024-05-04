@@ -25,6 +25,8 @@ fetch('/api/chat', {
     response.value += chunk
     if (done) break
   }
+}).catch(() => {
+  response.value = 'ERROR'
 })
 </script>
 
