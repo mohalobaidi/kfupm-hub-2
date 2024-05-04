@@ -1,4 +1,4 @@
-import { GenerateTextResult, StreamingTextResponse, generateText, streamText, tool } from 'ai'
+import { StreamingTextResponse } from 'ai'
 import type { Message as VercelChatMessage } from 'ai'
 import { ChatGroq } from '@langchain/groq'
 import { PromptTemplate } from '@langchain/core/prompts'
